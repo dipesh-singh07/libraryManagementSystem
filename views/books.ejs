@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Books</title>
+</head>
+<body>
+
+    <h1>All Books</h1>
+
+    <a href="/addbook">
+        Add Book
+    </a>
+
+    <br><br>
+
+    <table border="1" cellpadding="10">
+
+        <tr>
+            <th>Book Name</th>
+            <th>Author</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Action</th>
+        </tr>
+
+        <% books.forEach((book)=>{ %>
+
+            <tr>
+
+                <td>
+                    <%= book.bookName %>
+                </td>
+
+                <td>
+                    <%= book.author %>
+                </td>
+
+                <td>
+                    <%= book.category %>
+                </td>
+
+                <td>
+                    <%= book.price %>
+                </td>
+
+                <td>
+                    <%= book.quantity %>
+                </td>
+
+                <td>
+
+                    <a href="/edit/<%= book._id %>">
+                        Edit
+                    </a>
+
+                    |
+
+                    <a href="/delete/<%= book._id %>">
+                        Delete
+                    </a>
+
+                </td>
+
+            </tr>
+
+        <% }) %>
+
+    </table>
+
+</body>
+</html>
