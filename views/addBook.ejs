@@ -1,64 +1,170 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Book</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:linear-gradient(
+                135deg,
+                #4facfe,
+                #00f2fe
+            );
+        }
+
+        .container{
+            width:450px;
+            background:white;
+            padding:35px;
+            border-radius:15px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        h1{
+            text-align:center;
+            margin-bottom:25px;
+            color:#333;
+        }
+
+        .form-group{
+            margin-bottom:15px;
+        }
+
+        label{
+            display:block;
+            margin-bottom:6px;
+            font-weight:bold;
+            color:#444;
+        }
+
+        input{
+            width:100%;
+            padding:12px;
+            border:1px solid #ccc;
+            border-radius:8px;
+            font-size:16px;
+            outline:none;
+        }
+
+        input:focus{
+            border-color:#4facfe;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            background:#4facfe;
+            color:white;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:18px;
+            transition:0.3s;
+        }
+
+        button:hover{
+            background:#0077ff;
+        }
+
+        .back-btn{
+            display:block;
+            text-align:center;
+            margin-top:15px;
+            text-decoration:none;
+            color:#4facfe;
+            font-weight:bold;
+        }
+
+        .back-btn:hover{
+            text-decoration:underline;
+        }
+
+    </style>
 </head>
+
 <body>
 
-    <h1>Add New Book</h1>
+    <div class="container">
 
-    <form action="/createbook" method="POST">
+        <h1>📚 Add New Book</h1>
 
-        <input
-            type="text"
-            name="bookName"
-            placeholder="Book Name"
-            required
-        >
+        <form action="/createbook" method="POST">
 
-        <br><br>
+            <div class="form-group">
+                <label>Book Name</label>
+                <input
+                    type="text"
+                    name="bookName"
+                    placeholder="Enter book name"
+                    required
+                >
+            </div>
 
-        <input
-            type="text"
-            name="author"
-            placeholder="Author"
-            required
-        >
+            <div class="form-group">
+                <label>Author</label>
+                <input
+                    type="text"
+                    name="author"
+                    placeholder="Enter author name"
+                    required
+                >
+            </div>
 
-        <br><br>
+            <div class="form-group">
+                <label>Category</label>
+                <input
+                    type="text"
+                    name="category"
+                    placeholder="Enter category"
+                    required
+                >
+            </div>
 
-        <input
-            type="text"
-            name="category"
-            placeholder="Category"
-            required
-        >
+            <div class="form-group">
+                <label>Price</label>
+                <input
+                    type="number"
+                    name="price"
+                    placeholder="Enter price"
+                    required
+                >
+            </div>
 
-        <br><br>
+            <div class="form-group">
+                <label>Quantity</label>
+                <input
+                    type="number"
+                    name="quantity"
+                    placeholder="Enter quantity"
+                    required
+                >
+            </div>
 
-        <input
-            type="number"
-            name="price"
-            placeholder="Price"
-            required
-        >
+            <button type="submit">
+                Add Book
+            </button>
 
-        <br><br>
+        </form>
 
-        <input
-            type="number"
-            name="quantity"
-            placeholder="Quantity"
-            required
-        >
+        <a href="/books" class="back-btn">
+            ← Back to Books
+        </a>
 
-        <br><br>
-
-        <button type="submit">
-            Add Book
-        </button>
-
-    </form>
+    </div>
 
 </body>
 </html>
